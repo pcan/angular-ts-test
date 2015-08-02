@@ -1,0 +1,22 @@
+{
+    "name": "angularjs-typescript-project",
+    "version": "0.0.1",
+    "authors": [
+        "Pierantonio Cangianiello"
+    ],
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.3",
+        "angular-ui-router": "0.2.12",
+        "lodash": "~3",
+        "requirejs": "~2.1",
+        "reflect-metadata": "0.1.0"
+    }
+}

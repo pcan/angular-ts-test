@@ -1,0 +1,59 @@
+//core angular
+
+    IRootScopeService
+    IScope
+IWindowService
+IBrowserService
+    ITimeoutService
+IIntervalService
+IAnimateProvider
+    IFilterService
+IFilterProvider
+ILocaleService
+ILogService
+ILogProvider
+    IParseService
+IParseProvider
+ILocationService
+ILocationProvider
+IDocumentService
+IRootElementService
+    IQService
+IAnchorScrollService
+IAnchorScrollProvider
+ICacheFactoryService
+ICacheObject ?
+ICompileService
+    ICompileProvider
+IControllerProvider
+IHttpService
+IHttpProvider
+IInterpolateService
+IInterpolateProvider
+ITemplateCacheService
+ISCEService
+ISCEProvider
+ISCEDelegateService
+ISCEDelegateProvider
+ITemplateRequestService
+IAnimateService
+IInjectorService
+IProvideService
+
+//ui router
+
+    IStateParamsService
+IUrlRouterService
+IUiViewScrollProvider
+IUrlMatcher
+IUrlMatcherFactory
+IStateOptions
+IHrefOptions
+    IStateService
+    IUrlRouterProvider extends angular.IServiceProvider
+    IStateProvider extends angular.IServiceProvider
+IState
+
+//resource
+
+    IResourceService

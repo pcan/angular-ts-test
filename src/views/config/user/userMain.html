@@ -1,0 +1,29 @@
+<div class="state" data-ui-view>
+    <h4>This is the user configuration page.</h4>
+
+    <p></p>
+    <table>
+        <thead>
+            <tr><th>Id</th><th>Name</th><th>Rank</th><th></th></tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="user in model.users | orderBy:'id' | paging : status.currentPage : status.pageSize">
+                <td>{{::user.id}}</td>
+                <td>{{::user.name}}</td>
+                <td><span data-user-rank="user"></span></td>
+                
+                <td>
+                    <button data-ui-sref="app.config.user.edit({ userId: {{user.id}} })" data-ui-sref-active="active"><small>edit</small></button>
+                    <button data-ng-click="ctrl.deleteUser(user)"><small>delete</small></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <button data-ui-sref="app.config.user.new" data-ui-sref-active="active"><small>Add new</small></button>
+    </p>
+    <p>
+        <span data-ng-repeat="page in ctrl.pages()"><a href="" data-ng-click="status.currentPage = page">{{page}}</a>&nbsp;</span>
+    </p>
+
+</div>

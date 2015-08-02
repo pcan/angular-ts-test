@@ -1,0 +1,45 @@
+{
+    "version": "1.5.0-alpha",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./dist/js"
+    },
+    "filesGlob": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "bower_components/**/*.ts",
+        "node_modules/**/*.ts"
+    ],
+    "files": [
+        "./src/ts/app/common/core/config.ts",
+        "./src/ts/app/common/core/decorators.ts",
+        "./src/ts/app/common/core/injector.ts",
+        "./src/ts/app/common/core/module.ts",
+        "./src/ts/app/common/filter/PagingFilter.ts",
+        "./src/ts/app/config/ConfigArea.ts",
+        "./src/ts/app/config/company/CompanyArea.ts",
+        "./src/ts/app/config/user/UserEditorController.ts",
+        "./src/ts/app/config/user/UserMainController.ts",
+        "./src/ts/app/config/user/UserRankDirective.ts",
+        "./src/ts/app/config/user/UserService.ts",
+        "./src/ts/lib/angular-resource.d.ts",
+        "./src/ts/lib/angular-ui-router.d.ts",
+        "./src/ts/lib/angular.d.ts",
+        "./src/ts/lib/globals.d.ts",
+        "./src/ts/lib/jquery.d.ts",
+        "./src/ts/lib/lodash.d.ts",
+        "./src/ts/lib/reflect-metadata.d.ts",
+        "./src/ts/main.ts"
+    ]
+}

@@ -1,0 +1,17 @@
+.state {
+    margin:20px;
+    padding:10px;
+    border:1px solid #ABF;
+}
+
+table, td, th {
+    border: 1px solid #d8d8d8;
+}
+
+.text-red {
+    color:#e44;
+}
+
+a.active {
+    background-color: #cef;
+}

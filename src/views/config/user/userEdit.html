@@ -1,0 +1,21 @@
+<div class="state">
+    <h4>This is the user editor page. <small data-ng-if="model.user.id">(User id: {{::model.user.id}})</small></h4>
+
+    <p>
+        <span>User name: </span>
+        <input type="text" data-ng-model="model.user.name"/>
+    </p>
+    <p>
+        <span>Rank: </span>
+        <select type="text" data-ng-model="model.user.level">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </p>
+    <p>
+        <button data-ng-click="ctrl.save()">Save</button> <button data-ui-sref="^">Cancel</button>
+    </p>
+</div>
