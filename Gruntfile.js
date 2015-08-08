@@ -10,13 +10,25 @@ module.exports = function(grunt) {
     //var srcCssDir = srcDir + '/css';
 
     grunt.loadTasks('./grunt_tasks');
+    grunt.loadNpmTasks('grunt-typescript-using-tsconfig');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-sync');
+    grunt.loadNpmTasks('grunt-http-server');
 
     // Project configuration.
     grunt.initConfig({
+        'typescriptUsingTsConfig': {
+            main: {
+                options: {
+                    rootDir: "./",
+                    filesGlob: [
+                        "./src/**/*.ts"
+                    ]
+                }
+            }
+        },
         'ts-index': {
             main: {
                 options: {
@@ -38,7 +50,7 @@ module.exports = function(grunt) {
                     dest: distDir
                 }],
                 options: {
-                    force: true
+                    //force: true
                 },
                 //pretend: true, // Don't do any IO. Before you run the task with `updateAndDelete` PLEASE MAKE SURE it doesn't remove too much.
                 verbose: false //true // Display log messages when copying files
@@ -62,10 +74,21 @@ module.exports = function(grunt) {
                 ]
             }
         },
+        'http-server': {
+            'dev': {
+                root: './dist',
+                port: 8000,
+                host: "localhost",
+                cache: -1,
+                showDir : false,
+                autoIndex: true
+            }
+        }
     });
 
-    grunt.registerTask('build:sync', ['sync:main', 'ts-index:main']);
+    grunt.registerTask('build:sync', ['sync:main', 'typescriptUsingTsConfig', 'ts-index:main']);
     grunt.registerTask('build:dev', ['clean:main', 'copy:main', 'build:sync']);
+    grunt.registerTask('default', ['build:dev']);
     // grunt.registerTask('build:dev', ['clean:dev', 'index-generator:dev', 'test-task', 'copy:dev']);
     // grunt.registerTask('build:release', ['build:dev', 'clean:main', 'requirejs', 'copy:main']);
 };

@@ -1,13 +1,16 @@
 {
-  "name": "angularjs-typescript-project",
-  "version": "0.0.1",
-  "private": true,
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "^0.5.0",
-    "grunt-contrib-requirejs": "~0.4",
-    "grunt-sync": "~0.2",
-    "lodash": "~3.10"
-  }
+    "name": "angularjs-typescript-project",
+    "version": "0.0.1",
+    "private": true,
+    "devDependencies": {
+        "grunt": "^0.4.5",
+        "grunt-contrib-clean": "^0.6.0",
+        "grunt-contrib-copy": "^0.5.0",
+        "grunt-contrib-requirejs": "~0.4",
+        "grunt-http-server": "~1.9",
+        "grunt-sync": "~0.2",
+        "lodash": "~3.10",
+        "grunt-typescript-using-tsconfig": "git://github.com/pcan/grunt-typescript-using-tsconfig.git#customCompilerPath",
+        "typescript": "https://github.com/pcan/TypeScript/tarball/custom_emitter_test"
+    }
 }
