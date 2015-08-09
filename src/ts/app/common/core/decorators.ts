@@ -15,6 +15,10 @@ function addState(state: ng.ui.IState, controller: Function, controllerName: str
     allStates.push(state);
 }
 
+/**
+ * This decorator register a class constructor as a config block for the angular
+ * application module with app.config()
+ */
 export function ConfigBlock() {
     return function(target: any) {
         app.config(injector.inject(target));
@@ -22,6 +26,10 @@ export function ConfigBlock() {
     }
 }
 
+/**
+ * This decorator register a class constructor as a run block for the angular
+ * application module with app.run()
+ */
 export function RunBlock() {
     return function(target: any) {
         app.run(injector.inject(target));
@@ -29,6 +37,11 @@ export function RunBlock() {
     }
 }
 
+/**
+ * This decorator register a class as a Controller for the angular
+ * application module with app.controller(), using the class name as
+ * controller name.
+ */
 export function Controller() {
     return function(target: any) {
         app.controller(injector.resolveTypeName(target), injector.inject(target));
@@ -36,6 +49,11 @@ export function Controller() {
     }
 }
 
+/**
+ * This decorator register a class as a Service for the angular
+ * application module with app.service(), using the class name as service
+ * name.
+ */
 export function Service() {
     return function(target: any) {
         app.service(injector.resolveTypeName(target), injector.inject(target));
@@ -43,13 +61,30 @@ export function Service() {
     }
 }
 
-export function Factory() {
+/**
+ * This decorator register a class as a Factory for the angular
+ * application module with app.service(), using the class name as factory
+ * name.
+ */
+export function Factory() { //TODO: review this
     return function(target: any) {
         app.factory(injector.resolveTypeName(target), injector.inject(target));
         return target;
     }
 }
 
+/**
+ * This decorator register a class as a Directive for the angular
+ * application module with app.directive(), using the given name as directive
+ * name. The decorated class is not the directiveFactory, instead has the shape
+ * of the directive object that a directiveFactory produces; the factory
+ * is instantiated by this decorator, and the constructor arguments injected in
+ * the directive are injected in the factory too. The directive class must
+ * implement the ng.IDirective interface.
+ *
+ * @param directiveName The name of the directive, in camel-case, used in HTML
+ * in kebab-case
+ */
 export function Directive(directiveName) {
     return function(target: any) {
         var directiveFactory: ng.IDirectiveFactory = (...args) => {
@@ -70,6 +105,13 @@ export function Directive(directiveName) {
     }
 }
 
+/**
+ * This decorator register a class as a Filter for the angular
+ * application module with app.filter(), using given class name as filter
+ * name. The filter class must implement the ng.IFilter interface.
+ *
+ * @param filterName The name of the filter.
+ */
 export function Filter(filterName: string) {
     return function(target: any) {
         var filterFactory = (...args) => {
